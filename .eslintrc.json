@@ -19,5 +19,6 @@
     "testing-library/no-await-sync-query": "error",
     "testing-library/no-debugging-utils": "warn",
     "testing-library/no-dom-import": "off"
-  }
+  },
+  "parser": "babel-eslint"
 }
