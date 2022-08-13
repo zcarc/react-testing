@@ -20,5 +20,11 @@
     "testing-library/no-debugging-utils": "warn",
     "testing-library/no-dom-import": "off"
   },
-  "parser": "babel-eslint"
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  }
 }
