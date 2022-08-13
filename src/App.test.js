@@ -55,3 +55,9 @@ test("'-' 버튼을 눌렀을 때, counter는 -1로 변합니다.", () => {
   const counterElement = screen.getByTestId("counter");
   expect(counterElement).toHaveTextContent(-1);
 });
+
+test("on/off 버튼은 파란색입니다.", () => {
+  render(<App />);
+  const buttonElement = screen.getByTestId("on/off-button");
+  expect(buttonElement).toHaveStyle({ backgroundColor: "blue" });
+});
