@@ -62,7 +62,7 @@ test("on/off 버튼은 파란색입니다.", () => {
   expect(buttonElement).toHaveStyle({ backgroundColor: "blue" });
 });
 
-test("on/off 버튼이 클릭되면 '+' 버튼이 눌리는 것을 막습니다.", () => {
+test("on/off 버튼이 클릭되면 '+' 버튼의 disabled 속성의 값은 true로 변합니다.", () => {
   render(<App />);
 
   const onOffButtonElement = screen.getByTestId("on/off-button");
