@@ -1,16 +1,18 @@
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
+import ErrorBanner from "../../components/ErrorBanner";
 import Products from "./Products";
 
 function Type({ orderType }) {
   const [items, setItems] = useState([]);
+  const [error, setError] = useState(false);
 
   const loadItems = useCallback(async (orderType) => {
     try {
       const res = await axios.get(`http://localhost:5000/${orderType}`);
       setItems(res.data);
     } catch (error) {
-      console.error(error);
+      setError(true);
     }
   }, []);
 
@@ -27,6 +29,10 @@ function Type({ orderType }) {
   useEffect(() => {
     loadItems(orderType);
   }, []);
+
+  if (error) {
+    return <ErrorBanner message="에러가 발생했습니다." />;
+  }
 
   return <div>{optionItems}</div>;
 }
