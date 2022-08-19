@@ -35,7 +35,21 @@ function Type({ orderType }) {
     return <ErrorBanner message="에러가 발생했습니다." />;
   }
 
-  return <div>{optionItems}</div>;
+  return (
+    <>
+      <h2>주문 종류</h2>
+      <p>하나의 가격</p>
+      <p>총 가격:</p>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: orderType === "options" && "column",
+        }}
+      >
+        {optionItems}
+      </div>
+    </>
+  );
 }
 
 export default Type;
