@@ -9,7 +9,7 @@ test("각 프로덕트가 변경되면, 프로덕트 토탈 업데이트", async
   const productsTotal = screen.getByText("상품 총 가격:", { exact: false });
   expect(productsTotal).toHaveTextContent("0");
 
-  // America 상품 선택
+  // America 상품을 선택합니다.
   const americaInput = await screen.findByRole("spinbutton", {
     name: "America",
   });
